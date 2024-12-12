@@ -375,14 +375,20 @@ ul li a:hover {
     line-height: 29px;
     font-weight: 400;
 }
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 1024px) {
     #map {
-        bottom: -135%;
+        bottom: -130%;
     }
     .map1 {
         width: 25em;
     }
 }
+@media screen, (min-height:650) and (max-width: 1320px){
+    #map {
+        bottom: -77%;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     #map {
         position: relative;
