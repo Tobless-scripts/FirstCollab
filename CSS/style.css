@@ -352,7 +352,8 @@ ul li a:hover {
     padding: 5em 10em;
     margin: 0 auto;
     position: absolute;
-    bottom: -110%;
+    bottom: -120%;
+    z-index: 100;
     left: 5%;
 }
 .mapText {
@@ -376,7 +377,7 @@ ul li a:hover {
 }
 @media screen and (max-width: 1240px) {
     #map {
-        bottom: -125%;
+        bottom: -135%;
     }
     .map1 {
         width: 25em;
@@ -398,15 +399,18 @@ ul li a:hover {
 }
 
 #service {
-    margin-top: 30em;
+    margin-top: 20em;
+    padding: 10em 4vw 4vw 4vw;
     display: grid;
     grid-template-columns: repeat(3, 28vw);
-    padding: 4vw;
     gap: 3vw;
-    background-image: url('hp-1-map-1.jpg');
+    background-image: url('/images/mapOfTheWorld.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    mask-repeat: no-repeat;
+    z-index: -1;
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0,0,0,0)100%);
 }
 @media screen and (max-width: 1240px) {
     #service {
@@ -447,10 +451,101 @@ ul li a:hover {
     font-size: 1.7em;
     margin: .5em auto;
 }
-#fastService h3, #safeDeivery h3, #supports h3 {
-    color: rgb(93, 111, 153);
-    line-height: 24px;
+#mapLink {
+    text-decoration: none;
+    color: rgb(79, 93, 119);
+    padding: .5em;
+    border: 2px solid rgb(79, 93, 119);
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: .5em;
+}
+
+#trackingService {
+    display: grid;
+    position: relative;
+    width: 100%;
+    grid-template-columns: repeat(2, 50vw);
+    margin-top: 3em;
+}
+#constructionSide {
+    margin-top: 5em;
+    background: linear-gradient(rgba(58, 114, 253, 0.5), rgba(56, 109, 243, 0.5)), url('/images/constructionSite.webp');
+    background-size: cover;
+    background-position: center;
+    height: 89.7%;
+    width: 100%;
+}
+
+#track {
+    padding: 5vw 7vw;
+    background-color: #003366;
+    height: 100%;
+    color: white;
+    border-top-left-radius: .5em;
+}
+#track h1 {
     font-weight: 700;
+    line-height: 36px;
+    font-size: 3em;
+    margin-bottom: 1.5em;
+}
+#track h1 img {
+    margin-right: 1em;
+}
+#track h2 {
+    color: rgb(155, 180, 224);
+    font-weight: 400;
+    line-height: 29px;
+    font-size: 1.8em;
+    margin-bottom: 1.5em;
+}
+#track h3 {
+    font-weight: 400;
     font-size: 1.5em;
-    margin: .5em auto;
+    line-height: 26px;
+    color: rgb(155, 180, 224);
+    margin-bottom: 2em;
+}
+#track input{
+    padding: 1.5em;
+    font-style: italic;
+    width: 70%;
+    border: none;
+    margin: 0;
+}
+#track button {
+    border: none;
+    margin: 0;
+    padding: 1.5em 2em;
+    background-color: #ee330d;
+    color: white;
+    line-height: normal;
+    font-weight: 600;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+#track button:hover {
+    opacity: 0.8;
+}
+@media screen and (max-width: 1000px) {
+    #trackingService {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #constructionSide {
+        display: none;
+    }
+    #track input {
+        width: 100%;
+    }
+    #track button {
+        width: 100%;
+    }
+    #track {
+        margin: 0;
+    }
+    #trackingSrvice {
+        width: 90%;
+        overflow-x: hidden;
+    }
 }
