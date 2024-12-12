@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-wrap: break-word;
+    word-break: break-word;
+    width: 100%;
+    overflow-x: hidden;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.content {
+    background-color: #a00;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 2vw;
+    height: 5vw;
+    font-size: .9rem;
+}
+.content h3 {
+    border-right: 3px solid white;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    padding-right: 1vw;
+}
+@media screen and (max-width: 1000px) {
+    .content {
+        display: none;
+    }
+}
+
+.logo {
+    width: 18em;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+header {
+    padding: 1vw 2vw;
+    display: flex;
+    justify-content: space-between;
+    border: 0;
+    border-color: #e6e6e6;
+    background: linear-gradient(to bottom, rgb(93, 93, 93), rgb(52, 52, 52), black);
+    word-wrap: break-word;
+    word-break: break-word;
+    height: 105em;
+    position: relative;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .logo {
+        width: 15em;
+    }
+    header {
+        padding: 1vw 2vw;
+        height: 125em;
+    }
+}
+
+.fixed{
+    position: fixed;
+    width: 100%;
+    padding: 2vw;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-left: 0;
+    justify-content: space-between;
+    z-index: 999;
+    align-self: flex-start;
+}
+.fixed.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #1c1b1b; 
+}
+
+.ulcont {
+    display: flex;
+    align-items: center;
+    filter: none;
+    margin: 0 3vw;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 3vw;
+    list-style: none;
+}
+
+#menu {
+    width: 3em;
+    margin-left: .5em;
+    margin-right: 1.5em;
+}
+
+ul li a {
+    color:rgb(150, 150, 150);
+    text-decoration: none;
+    font-size: 1.4em;
+    font-weight: 900;
+    letter-spacing: .1rem;
+    transition: all .5s ease-in-out;
+    padding-bottom: .5em;
+}
+@media screen and (max-width: 1240px) {
+    ul li a {
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .fixed {
+        background-color: #1c1b1b;
+        margin: 0;
+    }
+    header {
+        padding: 0;
+    }
+    ul li a {
+        font-size: 1.5em;
+    }
+}
+.ulcont img {
+    width: 2.5em;
+    margin-right: 1em;
+    margin-left: 1.5em;
+}
+ul li a:active {
+    color: white;
+    border-bottom: 1px solid salmon;
+    border-radius: .5em;
+}
+ul li a:hover {
+    color: white;
+    border-bottom: 1px solid salmon;
+    border-radius: .5em;
+}
+
+    .container{
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 60%;
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #7b7878;
+        backdrop-filter: blur(10px);
+        z-index: 999;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0 4em;
+    }
+    .container ul{
+        display: flex;
+        flex-direction: column;
+        margin: 2em 0;
+        gap: 1.5em;
+        width: 100%;
+    }
+    .container ul li {
+        width: 100%;
+        padding: 2vw;
+    }
+    .container ul li a{
+        border-bottom: .1rem solid white;
+        padding-bottom: .5rem;
+        width: 100%;
+    }
+    @media screen and (min-width:1001px) {
+        #menu{
+            display: none;
+        }
+    }
+    @media screen and (max-width:1000px) {
+            .fixed{
+                position: fixed;
+                margin-top: 0;
+                width: 100%;
+                padding: 5vw;
+                border-bottom: 1px solid white;
+            }
+        .hide{
+            display: none;
+        }
+        main{
+            margin-top: 10vw;
+        }
+    }
