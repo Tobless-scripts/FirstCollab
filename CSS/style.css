@@ -473,7 +473,7 @@ ul li a:hover {
     background: linear-gradient(rgba(58, 114, 253, 0.5), rgba(56, 109, 243, 0.5)), url('/images/constructionSite.webp');
     background-size: cover;
     background-position: center;
-    height: 89.7%;
+    height: 89.9%;
     width: 100%;
 }
 
@@ -548,4 +548,9 @@ ul li a:hover {
         width: 90%;
         overflow-x: hidden;
     }
+}
+
+.allah {
+    background-color: blue;
+    color: white;
 }
