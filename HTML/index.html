@@ -16,8 +16,13 @@
     <div class="content">
         <h2>Nigeria</h3>
         <h3>Mon - Fri / 08:00 - 18:00</h3>
-        <h3>admin@logiscotheme.co</h3>
-        <h3>+234 815-687-4335</h3>
+        <h3><img src="/images/mail.png" alt="mail">admin@logiscotheme.co</h3>
+        <h3><img src="/images/call.png" alt="call">+234 815-687-4335</h3>
+        <div class="contentSocial">
+            <img src="/images/twitter.png" alt="twitter">
+            <img src="/images/linkedIn.abf46174-2d32-4f53-a6cd-644d5b2be452" alt="linkedIn">
+            <img src="/images/Instagram-Logo.wine.png" alt="instagram">
+        </div>
     </div>
     <header>
         <div class="fixed">
@@ -32,11 +37,13 @@
                     <li class="hide"><a href="case.html">Case Study</a></li>
                     <li class="hide"><a href="industry.html">Industry</a></li>
                 </ul>
-                <img src="../images/search icon.png" alt="search">
-                <img src="/images/shopping_cart_16dp_FFFFFF_FILL0_wght400_GRAD0_opsz20.png" alt="cart">
+                <img src="../images/search icon.png" alt="search" class="search">
+                <div class="cartContainer">
+                    <img src="/images/shopping_cart_16dp_FFFFFF_FILL0_wght400_GRAD0_opsz20.png" alt="cart" class="cart">
+                </div>
                 <ul>
                     <li onclick="showSideBar()" id="menu"><a href="#">
-                        <img src="/images/menu_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="menu" height="26" viewBox = "0 96 960 960" width="30"></a>
+                        <img src="/images/menu.png" alt="menu" height="26" viewBox = "0 96 960 960" width="30"></a>
                     </li>
                 </ul>
             </div>
@@ -103,14 +110,83 @@
         <div id="trackingService">
             <div id="constructionSide"></div>
             <div id="track">
-                <h1><img src="/images/icon-box.png" alt="icon-box">Quick Tracking Service</h1>
-                <h2>This is just an example of the custom HTML form. You may need to link it to your third party app or use third party html snippet . This theme doesn’t offer the tracking system.</h2>
-                <h3>*Please enter (House) Air Waybill No., B/L No., or Container No. For OPTIONAL SEARCH using your Customer Account No.</h3>
-                <input type="text" name="trackHouse" id="trackingInput" placeholder="CL-XXX-XXX-XX"> <button>TRACK NOW!</button>
+                <div class="trackScroll">
+                    <h1><img src="/images/icon-box.png" alt="icon-box">Quick Tracking Service</h1>
+                    <h2>This is just an example of the custom HTML form. You may need to link it to your third party app or use third party HTML snippets. This theme doesn’t offer the tracking system.</h2>
+                    <h3>*Please enter (House) Air Waybill No., B/L No., or Container No. For OPTIONAL SEARCH using your Customer Account No.</h3>
+                    <input type="text" name="trackHouse" id="trackingInput" placeholder="CL-XXX-XXX-XX">
+                    <button>TRACK NOW!</button>
+                </div>
             </div>
         </div>
-        <div class="allah">
-            <h1>Allah</h1>
+        <div id="transportation">
+            <div class="transport1 transports">
+                <img src="/images/tab-1-icon-n-1.png" alt="train" id="transportImg">
+                <h2 id="transportText">Land Transport</h2>
+                <p id="transportPara">1000+ Trucks in 120 Cities</p>
+            </div>
+            <div class="transport2 transports">
+                <img src="/images/tab-2-icon-n-1.png" alt="train" id="transportImg">
+                <h2 id="transportText">Air Freight</h2>
+                <p id="transportPara">120+ Aircrafts in 30 Cities</p>
+            </div>
+            <div class="transport3 transports">
+                <img src="/images/tab-3-icon-n-1.png" alt="train" id="transportImg">
+                <h2 id="transportText">Ocean Freight</h2>
+                <p id="transportPara">6000+ Containers in 20 Ports</p></div>
+            <div class="transport4 transports">
+                <img src="/images/tab-4-icon-n-1.png" alt="train" id="transportImg">
+                <h2 id="transportText">Smart Warehouses</h2>
+                <p id="transportPara">Cover 1,000,000 sqm.</p></div>
+        </div>
+        <div class="transportExplanation">
+            <div class="transport1Explain">
+                <div class="firstText">
+                    <h1>Land Transport</h1>
+                    <p>1000+ Trucks in 120 Cities</p>
+                </div>
+                <div class="fullExplanation">
+                    <p>Logisco Ground’s flexible model, using only quality carriers, means you benefit from improved service levels, greater flexibility and time-definite deliveries. Our expertise in transport management and planning allows us to design.</p>
+                    <h3>Through our global network of control towers and state-of-the-art technology, we are able to monitor and dynamically react to situations such as adverse weather, additional pick ups or drop offs, or heavy traffic, meaning that your goods are always traveling the most efficient route.Our non-asset based Road network provides you with flexibility, improved service levels.</h3>
+                   <button>MORE DETAIL</button>
+                   <button id="btn1"><img src="/images/document.png" alt="document" id="btn-img">DOWNLOAD PDF</button>            
+                </div>
+            </div>
+            <div class="transport2Explain">
+                <div class="firstText">
+                    <h1>Air Freight</h1>
+                    <p>120+ Aircrafts in 30 Cities</p>
+                </div>
+                <div class="fullExplanation">
+                    <p>Airfreight is fast-moving, challenging and constantly changing – it’s the nature of the business. Around the globe capacity and demand can change in the blink of an eye so it’s essential to have a partner.</p>
+                    <h3>Logisco is one of the largest air freight transportation providers in the world, offering a full and comprehensive package of premium, value-added services and specialist products all of which are specifically tailor-made for you. Across our worldwide network you can choose the service which best suits your needs. From New York to Shanghai and everywhere in between.</h3>
+                    <button>MORE DETAIL</button>
+                    <button id="btn1"><img src="/images/document.png" alt="document" id="btn-img">DOWNLOAD PDF</button>
+                </div>
+            </div>
+            <div class="transport3Explain">
+                <div class="firstText">
+                    <h1>Ocean Freight</h1>
+                    <p>6000+ Containers in 20 Ports</p>
+                </div>
+                <div class="fullExplanation">
+                    <p>Our extensive and long-term relations with shipping lines mean we can provide you with access to a global carrier portfolio, covering major ports, with the best transit times, fully flexible scheduling.</p>
+                    <h3>Logisco can offer a flexible range of Ocean Freight services for both Less-Than-Container Load (LCL) and Full-Container Load (FCL) shipments. These are backed by comprehensive Ocean Freight Management Services as well as Break-bulk, Project Forwarding, Partial and Full Charter Services. Logisco is one of the largest air freight transportation providers in the world.</h3>
+                    <button>MORE DETAIL</button>
+                    <button id="btn1"><img src="/images/document.png" alt="document" id="btn-img">DOWNLOAD PDF</button>
+                </div>
+            </div>
+            <div class="transport4Explain">
+                <div class="firstText">
+                    <h1>Smart Warehouses</h1>
+                    <p>Cover 1,000,000 sqm.</p>
+                </div>
+                <div class="fullExplanation">
+                    <p>Logisco Ground’s flexible model, using only quality carriers, means you benefit from improved service levels, greater flexibility and time-definite deliveries. Our expertise in transport management and planning.</p>
+                    <h3>Through our global network of control towers and state-of-the-art technology, we are able to monitor and dynamically react to situations such as adverse weather, additional pick ups or drop offs, or heavy traffic, meaning that your goods are always traveling the most efficient route. Our non-asset based Road network provides you with flexibility.</h3>
+                    <button>MORE DETAIL</button><button id="btn1"><img src="/images/document.png" alt="document" id="btn-img">DOWNLOAD PDF</button>
+                </div>
+            </div>
         </div>
     </main>
     
