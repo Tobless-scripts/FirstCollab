@@ -32,11 +32,13 @@
                     <li class="hide"><a href="case.html">Case Study</a></li>
                     <li class="hide"><a href="industry.html">Industry</a></li>
                 </ul>
-                <img src="../images/search icon.png" alt="search">
-                <img src="/images/shopping_cart_16dp_FFFFFF_FILL0_wght400_GRAD0_opsz20.png" alt="cart">
+                <img src="../images/search icon.png" alt="search" class="search">
+                <div class="cartContainer">
+                    <img src="/images/shopping_cart_16dp_FFFFFF_FILL0_wght400_GRAD0_opsz20.png" alt="cart" class="cart">
+                </div>
                 <ul>
                     <li onclick="showSideBar()" id="menu"><a href="#">
-                        <img src="/images/menu_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="menu" height="26" viewBox = "0 96 960 960" width="30"></a>
+                        <img src="/images/menu.png" alt="menu" height="26" viewBox = "0 96 960 960" width="30"></a>
                     </li>
                 </ul>
             </div>
@@ -103,10 +105,14 @@
         <div id="trackingService">
             <div id="constructionSide"></div>
             <div id="track">
-                <h1><img src="/images/icon-box.png" alt="icon-box">Quick Tracking Service</h1>
-                <h2>This is just an example of the custom HTML form. You may need to link it to your third party app or use third party html snippet . This theme doesn’t offer the tracking system.</h2>
-                <h3>*Please enter (House) Air Waybill No., B/L No., or Container No. For OPTIONAL SEARCH using your Customer Account No.</h3>
-                <input type="text" name="trackHouse" id="trackingInput" placeholder="CL-XXX-XXX-XX"> <button>TRACK NOW!</button>
+                <div class="trackScroll">
+                    <h1><img src="/images/icon-box.png" alt="icon-box">Quick Tracking Service</h1>
+                    <h2>This is just an example of the custom HTML form. You may need to link it to your third party app or use third party HTML snippets. This theme doesn’t offer the tracking system.</h2>
+                    <h3>*Please enter (House) Air Waybill No., B/L No., or Container No. For OPTIONAL SEARCH using your Customer Account No.</h3>
+                    <input type="text" name="trackHouse" id="trackingInput" placeholder="CL-XXX-XXX-XX">
+                    <button>TRACK NOW!</button>
+                </div>
+                
             </div>
         </div>
     </main>
