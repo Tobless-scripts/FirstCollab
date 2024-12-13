@@ -21,7 +21,7 @@ body {
 }
 
 .content {
-    background-color: #a00;
+    background-color: rgb(192, 44, 44);
     display: flex;
     color: white;
     justify-content: space-between;
@@ -36,6 +36,30 @@ body {
     align-self: center;
     padding-right: 1vw;
 }
+.content img {
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 1em;
+}
+.contentSocial img {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    background-color: #fff;
+    margin: 0;
+}
+.contentSocial img:hover {
+    mix-blend-mode: multiply;
+    opacity: 1;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.contentSocial {
+    display: flex;
+    gap: 2.5em;
+}
+
 @media screen and (max-width: 1000px) {
     .content {
         display: none;
@@ -143,7 +167,7 @@ ul li a {
     content: "0";
     position: absolute;
     top: 0;
-    right: .1vw;
+    right: .5vw;
     transform: translate(50%, -50%);
     background-color: red;
     color: white;
@@ -151,8 +175,8 @@ ul li a {
     font-weight: 700;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     border-radius: 50%;
-    width: 1.2em;
-    height: 1.2em;
+    width: 1.5em;
+    height: 1.5em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -505,7 +529,7 @@ ul li a:hover {
     background: linear-gradient(rgba(58, 114, 253, 0.5), rgba(56, 109, 243, 0.5)), url('/images/constructionSite.webp');
     background-size: cover;
     background-position: center;
-    height: 89.7%;
+    height: 90.3%;
     width: 100%;
 }
 
