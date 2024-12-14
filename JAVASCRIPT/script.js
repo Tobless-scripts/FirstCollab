@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (activeDivs.length > 0) {
         // Initially setting the custom property for the first element
         activeDivs[0].style.setProperty('--pseudo-brightness', 'brightness(0.7)');
+        activeDivs[0].classList.add('transportBackground')
     }
 
     activeDivs.forEach(div => {
@@ -53,10 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Resetting brightness for all elements
             activeDivs.forEach(d => {
                 d.style.setProperty('--pseudo-brightness', 'brightness(0.1)');
+                d.classList.remove('transportBackground')
             });
 
             // Highlight the clicked element
             div.style.setProperty('--pseudo-brightness', 'brightness(0.7)');
+            div.classList.add('transportBackground')
         });
     });
 });
