@@ -204,3 +204,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const videoTrigger = document.querySelector(".videoPlay");
+    const videoContainer = document.getElementById("videoContainer");
+    const video = document.getElementById("video");
+    const cancelButton = document.getElementById("cancelButton");
+
+    videoTrigger.addEventListener("click", () => {
+        if (window.innerWidth < 1000) {
+            video.setAttribute("potrait", "")
+            videoContainer.style.display = "flex";
+            video.play()
+        } else {
+            video.setAttribute("potrait", "")
+            videoContainer.style.display = "flex";
+            video.play()
+        }
+    });
+
+    cancelButton.addEventListener("click", () => {  
+        video.pause()
+        window.location.href = "#videos"
+        videoContainer.style.display = "none"
+    });
+
+    video.addEventListener("ended", () => {
+        videoContainer.style.display = "none";
+        window.location.href = "#videos"
+    })
+})    

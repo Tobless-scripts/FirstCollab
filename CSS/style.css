@@ -464,7 +464,7 @@ ul li a:hover {
     display: grid;
     grid-template-columns: repeat(3, 28vw);
     gap: 3vw;
-    background-image: url('/images/mapOfTheWorld.webp');
+    background-image: url('/media/mapOfTheWorld.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -530,7 +530,7 @@ ul li a:hover {
 }
 #constructionSide {
     margin-top: 5em;
-    background: linear-gradient(rgba(58, 114, 253, 0.5), rgba(56, 109, 243, 0.5)), url('/images/constructionSite.webp');
+    background: linear-gradient(rgba(58, 114, 253, 0.5), rgba(56, 109, 243, 0.5)), url('/media/constructionSite.webp');
     background-size: cover;
     background-position: center;
     height: 90.3%;
@@ -661,19 +661,19 @@ ul li a:hover {
 
 
 .transport1 {
-    background-image: url('/images/train.jpeg');
+    background-image: url('/media/train.jpeg');
 }
 
 .transport2 {
-    background-image: url('/images/plane.jpeg');
+    background-image: url('/media/plane.jpeg');
 }
 
 .transport3 {
-    background-image: url('/images/ship.jpeg');
+    background-image: url('/media/ship.jpeg');
 }
 
 .transport4 {
-    background-image: url('/images/warehouse.jpg');
+    background-image: url('/media/warehouse.jpg');
 }
 
 .transport1, .transport2, .transport3, .transport4 {
@@ -822,16 +822,16 @@ ul li a:hover {
     padding-top: 80%;
 }
 .why1 {
-    background-image: url('/images/engineer.webp');
+    background-image: url('/media/engineer.webp');
 }
 .why2 {
-    background-image: url('/images/customer.jpg');
+    background-image: url('/media/customer.jpg');
 }
 .why3 {
-    background-image: url('/images/floor.jpeg');
+    background-image: url('/media/floor.jpeg');
 }
 .why4 {
-    background-image: url('/images/containet.jpeg');
+    background-image: url('/media/containet.jpeg');
 }
 @media screen and (max-width: 1000px) {
     .choose, .choose2, .choose3, .choose4 {
@@ -957,4 +957,131 @@ ul li a:hover {
 .visible2 {
     display: grid;
 }
+.video {
+    width: 100%;
+    padding: 10vw 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; 
+    z-index: 1; 
+}
 
+.video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('/media/videoImg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2; 
+}
+
+.video::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(29, 67, 124, 0.8);
+    z-index: -1; 
+    filter: blur(0.1);
+}
+
+.videoPlay {
+    cursor: pointer;
+}
+
+.video h1 {
+    font-weight: 800;
+    line-height: 41px;
+    color: white;
+    font-size: 3em;
+    margin: 1em;
+    margin-bottom: .5em;
+}
+
+.video h3 {
+    color: rgb(229, 61, 52);
+    font-weight: 400;
+    line-height: 36px;
+    font-size: 2em;
+    margin-bottom: 1.5em;
+}
+
+.video p {
+    color: rgb(157, 177, 223);
+    font-weight: 400;
+    line-height: 29px;
+    font-size: 1.8em;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1d437c;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.video-container video {
+    width: 80%;
+    height: auto;
+    max-height: 90%;
+    object-fit: cover;
+}
+
+.video-container video[landscape] {
+    width: auto;
+    height: 100%;
+}
+
+.cancel-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #d72d2d;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5%;
+    font-size: 16px;
+}
+
+@media screen and (max-width:1000px) {
+    .video {
+        padding: 20vw 5vw;
+    }
+
+    .video h1 {
+        margin-top: .5em;
+    }
+
+    .video p {
+        font-size: 1.5em;
+    }
+
+    .video-container video {
+        width: 100%;
+    }
+
+    .video-trigger button {
+        display: flex;
+    }
+
+    .cancel-button button {
+        display: flex;
+    }
+}
