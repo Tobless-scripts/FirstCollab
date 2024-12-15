@@ -149,4 +149,58 @@ fourthTransport.addEventListener('click', () => {
 })
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    choose.classList.add('visible2')
+    choose.classList.remove('invisible2')
+})
 
+const open1Elements = document.querySelectorAll('.open1');
+const open2Elements = document.querySelectorAll('.open2');
+const open3Elements = document.querySelectorAll('.open3');
+const open4Elements = document.querySelectorAll('.open4');
+const choose = document.querySelector('.choose');
+const choose2 = document.querySelector('.choose2');
+const choose3 = document.querySelector('.choose3');
+const choose4 = document.querySelector('.choose4');
+
+const chooseElements = [choose, choose2, choose3, choose4];
+const openElements = [open1Elements, open2Elements, open3Elements, open4Elements];
+
+// Function to initialize default state
+function initializeDefaultState() {
+    // Make the first 'choose' section visible and the first 'open' element normal
+    chooseElements[0].classList.add('visible2');
+    chooseElements[0].classList.remove('invisible2');
+    openElements[0].forEach(openElement => openElement.classList.add('normal')); // Add 'normal' to all open1 items
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize default state when the page loads
+    initializeDefaultState();
+
+    // Loop through each open group and add event listeners
+    openElements.forEach((openElementGroup, index) => {
+        openElementGroup.forEach(openElement => {
+            openElement.addEventListener('click', () => {
+                // Hide all 'choose' elements first
+                chooseElements.forEach((chooseElement, i) => {
+                    if (i === index) {
+                        // Show the corresponding 'choose' element
+                        chooseElement.classList.add('visible2');
+                        chooseElement.classList.remove('invisible2');
+                        openElements[0].forEach(openElement => openElement.classList.remove('normal')); // Add 'normal' to all open1 items
+                    } else {
+                        // Hide the other 'choose' elements
+                        chooseElement.classList.add('invisible2');
+                        chooseElement.classList.remove('visible2');
+                    }
+                });
+
+                // Remove the 'normal' class from all items in the group
+                openElementGroup.forEach(item => item.classList.remove('normal'));
+                // Add the 'normal' class to the clicked item
+                openElement.classList.add('normal');
+            });
+        });
+    });
+});
