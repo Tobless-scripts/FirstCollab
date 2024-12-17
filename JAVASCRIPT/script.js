@@ -9,17 +9,6 @@ function hideSideBar() {
     document.querySelector('.content').classList.remove('blurred'); 
 }
 
-
-window.onscroll = function () {
-    var header = document.querySelector('.fixed');
-    if (window.scrollY > 30) { 
-        header.classList.add('sticky'); 
-    } else {
-        header.classList.remove('sticky'); 
-    }
-
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -148,59 +137,142 @@ fourthTransport.addEventListener('click', () => {
 
 })
 
+const openElements = document.querySelector('.choose');
+const allPassionate = document.querySelectorAll(".passionate");
+const allOpen = document.querySelectorAll(".opener");
+const urls = [
+    '/media/engineer.webp',
+    '/media/plane.jpeg',
+    '/media/ship.jpeg',
+    '/media/warehouse.jpg'
+];
+
+const why = document.querySelector(".why");
 
 document.addEventListener('DOMContentLoaded', () => {
-    choose.classList.add('visible2')
-    choose.classList.remove('invisible2')
+    // Show the first passionate item on page load
+    if (allPassionate.length > 0) {
+        allPassionate[0].classList.add("visible2");
+        allPassionate[0].classList.remove("invisible2");
+    }
+
+    // Also make sure the first opener is marked as 'normal'
+    if (allOpen.length > 0) {
+        allOpen[0].classList.add("normal");
+    }
+
+    // Optionally set the background image for the first item
+    why.style.backgroundImage = `url("${urls[0]}")`;
+});
+
+openElements.addEventListener('click', function (e) {
+    const clicked = e.target;
+    if (clicked.classList.contains("opener")) {
+        // Remove 'normal' class from all openers
+        allOpen.forEach((elem) => elem.classList.remove("normal"));
+
+        // Hide all passionate elements
+        allPassionate.forEach((elem) => elem.classList.add("invisible2"));
+        allPassionate.forEach((elem) => elem.classList.remove("visible2"));
+
+        // Add 'normal' to clicked opener
+        clicked.classList.add("normal");
+
+        // Get the corresponding number from the clicked opener
+        const newAppend = clicked.dataset.number;
+
+        // Set the background image based on the selected opener
+        why.style.backgroundImage = `url("${urls[+newAppend - 1]}")`;
+
+        // Show the corresponding passionate element
+        const visiblePassion = document.querySelector(`.passion${newAppend}`);
+        if (visiblePassion) {
+            visiblePassion.classList.add("visible2");
+        }
+    }
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const videoTrigger = document.querySelector(".videoPlay");
+    const videoContainer = document.getElementById("videoContainer");
+    const video = document.getElementById("video");
+    const cancelButton = document.getElementById("cancelButton");
+
+    videoTrigger.addEventListener("click", () => {
+        if (window.innerWidth < 1000) {
+            video.setAttribute("potrait", "")
+            videoContainer.style.display = "flex";
+            video.play()
+        } else {
+            video.setAttribute("potrait", "")
+            videoContainer.style.display = "flex";
+            video.play()
+        }
+    });
+
+    cancelButton.addEventListener("click", () => {  
+        video.pause()
+        window.location.href = "#videos"
+        videoContainer.style.display = "none"
+    });
+
+    video.addEventListener("ended", () => {
+        videoContainer.style.display = "none";
+        window.location.href = "#videos"
+    })
+})    
+
+const refreshButton = document.querySelector(".submit")
+const inputs = document.querySelectorAll(".inputed")
+
+refreshButton.addEventListener('click', () => {
+    inputs.forEach(input => {
+        if (input.value.trim() !== "") {
+            input.value = ""
+        }
+    })
 })
 
-const open1Elements = document.querySelectorAll('.open1');
-const open2Elements = document.querySelectorAll('.open2');
-const open3Elements = document.querySelectorAll('.open3');
-const open4Elements = document.querySelectorAll('.open4');
-const choose = document.querySelector('.choose');
-const choose2 = document.querySelector('.choose2');
-const choose3 = document.querySelector('.choose3');
-const choose4 = document.querySelector('.choose4');
 
-const chooseElements = [choose, choose2, choose3, choose4];
-const openElements = [open1Elements, open2Elements, open3Elements, open4Elements];
 
-// Function to initialize default state
-function initializeDefaultState() {
-    // Make the first 'choose' section visible and the first 'open' element normal
-    chooseElements[0].classList.add('visible2');
-    chooseElements[0].classList.remove('invisible2');
-    openElements[0].forEach(openElement => openElement.classList.add('normal')); // Add 'normal' to all open1 items
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize default state when the page loads
-    initializeDefaultState();
+window.onscroll = function () {
+    var header = document.querySelector('.fixed');
+    if (window.scrollY > 30) { 
+        header.classList.add('sticky'); 
+    } else {
+        header.classList.remove('sticky'); 
+    }
 
-    // Loop through each open group and add event listeners
-    openElements.forEach((openElementGroup, index) => {
-        openElementGroup.forEach(openElement => {
-            openElement.addEventListener('click', () => {
-                // Hide all 'choose' elements first
-                chooseElements.forEach((chooseElement, i) => {
-                    if (i === index) {
-                        // Show the corresponding 'choose' element
-                        chooseElement.classList.add('visible2');
-                        chooseElement.classList.remove('invisible2');
-                        openElements[0].forEach(openElement => openElement.classList.remove('normal')); // Add 'normal' to all open1 items
-                    } else {
-                        // Hide the other 'choose' elements
-                        chooseElement.classList.add('invisible2');
-                        chooseElement.classList.remove('visible2');
-                    }
-                });
+    const scrollToTop = document.getElementById("scrollToTop");
+    if (document.body.scrollTop > 500  || document.documentElement.scrollTop > 500 ) {
+        scrollToTop.style.display = "block"
+    } else {
+        scrollToTop.style.display = "none"
+    }
+};
 
-                // Remove the 'normal' class from all items in the group
-                openElementGroup.forEach(item => item.classList.remove('normal'));
-                // Add the 'normal' class to the clicked item
-                openElement.classList.add('normal');
-            });
-        });
+let scrollToTop = () => {
+    window.scrollTo( {
+        top: 0,
+        behavior: "smooth"
+    } );
+};
+
+
+    // import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 3, 
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
     });
-});
+    
