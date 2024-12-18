@@ -23,10 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1
     });
 
-    const elements = document.querySelectorAll(".trackScroll");
+    const elements = document.querySelectorAll(".intersect");
     elements.forEach(element => {
         observer.observe(element);
     });
+
+    const elements2 = document.querySelectorAll(".intersect2");
+    elements2.forEach(element => {
+        observer.observe(element);
+    });
+
+    const elements3 = document.querySelectorAll(".intersect3");
+    elements3.forEach(element => {
+        observer.observe(element);
+    });
+    
 });
 
 document.addEventListener('DOMContentLoaded', () => {
