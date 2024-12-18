@@ -18,6 +18,7 @@ body {
     margin: 0;
     padding: 0;
     display: block;
+    background-color: rgb(247,247,247);
 }
 
 .content {
@@ -615,14 +616,14 @@ ul li a:hover {
         overflow-x: hidden;
     }
 }
-.trackScroll {
+.intersect {
     transform: translateX(95%);
     transition: all 1s ease-out;
-    z-index: 1000;
+    z-index: 1;
     opacity: 0;
 }
 
-.trackScroll.visible {
+.intersect.visible {
     opacity: 1;
     transform: translateX(0);
 }
@@ -1310,6 +1311,26 @@ ul li a:hover {
     justify-content: space-evenly;
     gap: 3em;
     align-items: center;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+
+.case1 h1 {
+    font-weight: 800;
+    line-height: 42px;
+    font-size: 4.5em;
+}
+
+.case1 p {
+    color: rgb(229, 61, 52);
+    line-height: 31px;
+    font-weight: 300;
+    font-size: 3.5em;
+}
+
+.case1 p span {
+    font-size: .6em;
+    font-weight: 400;
 }
 
 .swiper-wrapper {
@@ -1341,6 +1362,16 @@ ul li a:hover {
     }
     .caseExplain {
         display: none;
+    }
+    .case1 {
+        gap: .5em;
+        justify-content: space-around;
+    }
+    .case1 h1 {
+        font-size: 3em;
+    }
+    .case1 p {
+        font-size: 2.5em;
     }
 }
 
@@ -1384,3 +1415,332 @@ ul li a:hover {
     font-size: 1.5em;
 }
 
+.aboutUs {
+    display: grid;
+    grid-template-columns: 45vw 45vw;
+    padding: 0 5vw;
+    margin-top: 9em;
+}
+.backImg {
+    background-image: url('/media/containerStock.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.more {
+    background-color: rgb(20,51,105);
+    padding: 7vw 5vw;
+}
+.more h3 {
+    color: rgb(138, 167, 218);
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 1.7em;
+}
+.more h1 {
+    color: white;
+    font-weight: 800;
+    line-height: 48px;
+    font-size: 4.2em;
+    margin-top: .2em;
+}
+.more h2 {
+    line-height: 34px;
+    font-weight: 400;
+    color:  rgb(199, 216, 255);
+    font-size: 2.1em;
+    margin-top: .5em;
+}
+.more p {
+    line-height: 29px;
+    font-weight: 400;
+    color: white;
+    font-size: 1.7em;
+    margin-top: .7em;
+}
+.more button {
+    background-color: rgb(229,61,52);
+    font-weight: 700;
+    line-height: 22px;
+    font-size: 1.5em;
+    color: white;
+    border: none;
+    margin-top: 1.5em;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.more button:hover {
+    background-color: rgb(241, 95, 88);
+}
+
+.advance {
+    display: grid;
+    grid-template-columns: 45vw 45vw;
+    padding: 0 5vw;
+}
+.advanceBack {
+    background-image: url('/media/containerLook.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.technology {
+    padding: 7vw 5vw 5vw 5vw;
+    box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.1);
+}
+.technology h3 {
+    font-weight: 400;
+    color: rgb(154, 154, 154);
+    line-height: 24px;
+    font-size: 1.7em;
+    text-transform: uppercase;
+}
+.technology h1 {
+    color:  rgb(20, 51, 105);
+    font-weight: 800;
+    line-height: 43px;
+    font-size: 3.5em;
+    margin-top: .1em;
+}
+.initalTech {
+    display: grid;
+    grid-template-columns: 20% 60%;
+    margin: 3em auto 0 auto;
+}
+.tech1 h3 {
+    color: rgb(37, 37, 37);
+    font-weight: 700;
+    font-size: 1.9em;
+    line-height: 34px;
+}
+.tech1 p {
+    color:  rgb(103, 103, 103);
+    line-height: 20px;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.intersect2 {
+    transform: translateX(-95%);
+    transition: all 1s ease-out;
+    z-index: 1;
+    opacity: 0;
+}
+
+.intersect2.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media screen and (max-width: 1000px) {
+    .advance, .aboutUs {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .technology {
+        padding: 7vw;
+    }
+    .more, .technology {
+        padding: 10vw;
+    }
+    .more h1, .technology h1 {
+        font-size: 4em;
+    }
+    .initalTech {
+        grid-template-columns: 30% 65%;
+        margin-top: 4.5em;
+    }
+    .initalTech h3 {
+        font-size: 1.7em;
+    }
+    .initalTech p {
+        font-size: 1.2em;
+        line-height: 18px;
+    }
+}
+
+.industry {
+    margin: 15em 30em 5em 30em;
+    text-align: center;
+}
+.industry h2 {
+    color: rgb(154, 154, 154);
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+.industry h1 {
+    color: rgb(56, 56, 56);
+    line-height: 48px;
+    font-weight: 700;
+    font-size: 3.5em;
+}
+.industry p {
+    color: rgb(117, 127, 144);
+    font-weight: 400;
+    line-height: 27px;
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+.solutions {
+    display: grid;
+    grid-template-columns: repeat(3, 28vw);
+    gap: 3vw;
+    margin: 5vw;
+}
+.solutionChild {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-bottom: .3em solid rgb(192, 44, 44);
+    padding: 7em 2em;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+.solutionChild img {
+    width: 12em;
+}
+.solutionChild h2 {
+    color: rgb(20, 51, 105);
+    font-weight: 700;
+    line-height: 27px;
+    font-size: 2em;
+    border: none;
+    margin: .5em auto;
+}
+.solutionChild p {
+    color: rgb(60, 70, 96);
+    line-height: 27px;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+}
+@media screen and (max-width: 1000px) {
+    .solutions {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .solutionChild {
+        border-bottom: none;
+    }
+    .industry {
+        margin: 7em 3em;
+    }
+    .industry h1 {
+        font-size: 3em;
+    }
+    .industry h2 {
+        font-size: 1.3em;
+    }
+    .industry p {
+        font-size: 1.2em;
+    }
+}
+
+.para { 
+    color: rgb(146, 155, 171);
+    line-height: 27px;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 3em;
+}
+.para span {
+    color: rgb(20, 51, 105);
+}
+
+.quote {
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    margin: 5em auto;
+}
+.girl {
+    background-image: url('/media/woman.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.request {
+    padding: 5vw 3vw;
+    background-color: white;
+}
+.request h1 {
+    color: rgb(56, 56, 56);
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 41px;
+    margin-bottom: .5em;
+}
+.request h2 {
+    color: rgb(119, 119, 119);
+    line-height: 29px;
+    font-weight: 500;
+    font-size: 1.7em;
+}
+.request p {
+    color: rgb(37, 37, 37);
+    line-height: 36px;
+    font-weight: 700;
+    font-size: 1.9em;
+}
+.request p span {
+    color: rgb(229, 60, 53);
+}
+.form {
+    margin-top: 1.5em;
+}
+.form input{
+    width: 45%;
+    margin: .5em;
+    padding: 1.5em;
+    border: none;
+    background-color: rgb(245,245,245);
+}
+.form button {
+    width: 94%;
+    background-color: rgb(229,60,53);
+    font-weight: 700;
+    color: white;
+    line-height: normal;
+    font-size: 1.2em;
+    border: none;
+    padding: 2.5em 0;
+    margin-top: .5em;
+    cursor: pointer;
+}
+.form button:hover {
+    background-color: rgb(242, 106, 101);
+}
+.intersect3 {
+    transform: translateX(80%);
+    transition: all 1s ease-out;
+    z-index: 10000;
+    opacity: 0;
+}
+
+.intersect3.visible {
+    opacity: 1;
+    transform: translateX(0%);
+}
+@media screen and (max-width: 1000px) {
+    .quote {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .form input {
+        width: 100%;
+        padding: 2em;
+    }
+    .request {
+        padding: 10vw 5vw;
+    }
+    .form button {
+        width: 100%;
+    }
+}
