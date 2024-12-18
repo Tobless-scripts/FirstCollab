@@ -21,7 +21,7 @@ body {
 }
 
 .content {
-    background-color: #a00;
+    background-color: rgb(192, 44, 44);
     display: flex;
     color: white;
     justify-content: space-between;
@@ -36,6 +36,30 @@ body {
     align-self: center;
     padding-right: 1vw;
 }
+.content img {
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 1em;
+}
+.contentSocial img {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    background-color: #fff;
+    margin: 0;
+}
+.contentSocial img:hover {
+    mix-blend-mode: multiply;
+    opacity: 1;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.contentSocial {
+    display: flex;
+    gap: 2.5em;
+}
+
 @media screen and (max-width: 1000px) {
     .content {
         display: none;
@@ -125,6 +149,38 @@ ul li a {
     transition: all .5s ease-in-out;
     padding-bottom: .5em;
 }
+.search {
+    width: 2.5em;
+    margin-right: 1em;
+    margin-left: 1.5em;
+}
+.cartContainer {
+    position: relative;
+    display: inline-block;
+    margin-right: 1em;
+    margin-left: 1.5em;
+}
+.cart {
+    width: 2.5em;
+}
+.cartContainer::after {
+    content: "0";
+    position: absolute;
+    top: 0;
+    right: .5vw;
+    transform: translate(50%, -50%);
+    background-color: red;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media screen and (max-width: 1240px) {
     ul li a {
         font-size: 1em;
@@ -141,11 +197,10 @@ ul li a {
     ul li a {
         font-size: 1.5em;
     }
-}
-.ulcont img {
-    width: 2.5em;
-    margin-right: 1em;
-    margin-left: 1.5em;
+    .cart, .search {
+        margin-right: .5em;
+        margin-left: .5em;
+    }
 }
 ul li a:active {
     color: white;
@@ -186,9 +241,12 @@ ul li a:hover {
         padding: 2vw;
     }
     .container ul li a{
-        border-bottom: .1rem solid white;
         padding-bottom: .5rem;
         width: 100%;
+    }
+    .container ul li a:hover{
+        border-bottom: .1rem solid salmon;
+        color: white;
     }
     @media screen and (min-width:1001px) {
         #menu{
