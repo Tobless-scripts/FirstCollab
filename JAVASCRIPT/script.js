@@ -282,8 +282,60 @@ let scrollToTop = () => {
             clickable: true,
         },
         autoplay: {
-            delay: 3000,
+            delay: 2500,
             disableOnInteraction: false,
         },
+    })
+  
+    
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    const firstAnswer = faqQuestions[0].nextElementSibling;
+
+    const firstIcon = faqQuestions[0].querySelector('.icon');
+
+    faqQuestions[0].style.color = 'rgb(229,61,52)'; 
+
+    firstIcon.style.color = 'rgb(229,61,52)'; 
+
+    firstIcon.textContent = '-'
+
+    firstAnswer.style.display = 'block'; 
+    
+    faqQuestions.forEach(question => {
+
+      question.addEventListener('click', () => {
+
+        faqQuestions.forEach(q => {
+
+          const answer = q.nextElementSibling;
+          const icon = q.querySelector('.icon');
+
+          if (q !== question) {
+            answer.style.display = 'none'; 
+            icon.textContent = '+';
+            
+            q.style.color = ''; 
+            icon.style.color = ''; 
+          }
+        });
+    
+
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('.icon');
+
+        const isVisible = answer.style.display === 'block';
+    
+        answer.style.display = isVisible ? 'none' : 'block'; 
+
+        icon.textContent = isVisible ? '+' : '-'; 
+
+        question.style.color = isVisible ? '' : 'rgb(229,61,52)';
+
+        icon.style.color = isVisible ? '' : 'rgb(229,61,52)'; 
+
+      });
+
     });
+    
     
